@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: student-lmiranda1586-app-service
+spec:
+  selector:
+    app: student-lmiranda1586-app
+  type: LoadBalancer
+  ports:
+    - port: 80
+      targetPort: 3000
+      protocol: TCP

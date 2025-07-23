@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: student-lmiranda1586-app
+  labels:
+    app: student-lmiranda1586-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: student-lmiranda1586-app
+  template:
+    metadata:
+      labels:
+        app: student-lmiranda1586-app
+    spec:
+      containers:
+        - name: student-lmiranda1586-app
+          image: us-central1-docker.pkg.dev/devsecops-lab-464018/student-lmiranda1586/student-lmiranda1586-app:latest
+          ports:
+            - containerPort: 3000
+          env:
+            - name: PORT
+              value: "3000"
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "250m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
