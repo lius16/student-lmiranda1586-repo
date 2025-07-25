@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: student-lmiranda1586-app
-          image: us-central1-docker.pkg.dev/devsecops-lab-464018/student-lmiranda1586/student-lmiranda1586-app:latest
+          image: ${IMAGE}
           ports:
             - containerPort: 3000
           env:
